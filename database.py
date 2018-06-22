@@ -8,12 +8,18 @@ from sqlalchemy import DateTime
 
 Base = declarative_base()
 
+'''
+User table to store user information
+'''
 class User(Base):
     __tablename__ = 'user'
 
     email = Column(String(250), primary_key=True)
     password = Column(String(250), nullable=False)
 
+'''
+Account table with account information of each user
+'''
 class Account(Base):
     __tablename__ = "account"
 
@@ -22,6 +28,9 @@ class Account(Base):
     balance = Column(Integer)
     user = relationship(User)
 
+'''
+Transaction table to store transaction details of certain account
+'''
 class Transaction(Base):
     __tablename__ = 'transaction'
 
