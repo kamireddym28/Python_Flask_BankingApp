@@ -11,6 +11,7 @@ Base = declarative_base()
 '''
 User table to store user information
 '''
+
 class User(Base):
     __tablename__ = 'user'
 
@@ -20,6 +21,7 @@ class User(Base):
 '''
 Account table with account information of each user
 '''
+
 class Account(Base):
     __tablename__ = "account"
 
@@ -31,6 +33,7 @@ class Account(Base):
 '''
 Transaction table to store transaction details of certain account
 '''
+
 class Transaction(Base):
     __tablename__ = 'transaction'
 
