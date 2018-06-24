@@ -16,6 +16,7 @@ session = DBSession()
 '''
 Function to 'GET' information about certain account along with transaction details
 '''
+
 @app.route('/getDetails', methods = ['GET'])
 def get():
     email_id = request.args['email']
@@ -39,6 +40,7 @@ def get():
 '''
 Function to 'deposit' amount into account when balance is below $10m and update the account balance
 '''
+
 @app.route('/deposit', methods = ['POST'])
 def deposit():
     email_id = request.json['email']
@@ -68,6 +70,7 @@ def deposit():
 '''
 Function to 'withdraw' amount from account when balance is above $100 and update the account balance
 '''
+
 @app.route('/withdraw', methods = ['POST'])
 def withdraw():
     email_id = request.json['email']
@@ -97,6 +100,7 @@ def withdraw():
 '''
 Function to make 'POST' request to open an account for every new user
 '''
+
 @app.route('/OpenAccount', methods = ['POST'])
 def post():
     email_id = request.json['email']
@@ -125,3 +129,4 @@ if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
     app.run(debug=True)
     app.run(host='0.0.0.0', port=5000)
+ 
